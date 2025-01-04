@@ -26,7 +26,7 @@ function Usuarios() {
         
 
 
-    }, []);
+    }, [id]);
 
     const deleteUsuario = async (id) => {
 
