@@ -8,13 +8,13 @@ function Usuarios() {
     const [usuarios, setUsuarios] = useState([]);
 
     
-    const URL = process.env.REACT_APP_API_URL_SERVER_GET;
+    //const URL = process.env.REACT_APP_API_URL_SERVER_GET;
 
     useEffect(() => {
 
         try {
             const getUsuarios = async () => {
-                const response = await axios.get(URL);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL_SERVER_GET}`);
                 setUsuarios(response.data);
             }
 
@@ -34,7 +34,7 @@ function Usuarios() {
 
         console.log(id);
         try {
-            const respuesta = await axios.delete(`http://localhost:9000/user/${id}`);
+            const respuesta = await axios.delete(`${process.env.REACT_APP_API_URL_SERVER_DELETE}/${id}`);
             setUsuarios(usuarios.filter((usuario) => usuario._id !== id));
 
             console.log(respuesta);
