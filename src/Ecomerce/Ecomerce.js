@@ -20,12 +20,12 @@ const Ecomerce = () => {
 
 
 const Articulos =[
-    {Nombre: 'Whey premium', Precio: '$7150',descripcion: 'Medida: 30 g --Proteina: 23.5g  -- BCAA: 5g', img: Premium},                          
-    {Nombre: 'whey-pro', Precio: '$2190' ,descripcion: 'Medida: 30 g <>Proteina: 24g -- BCAA: 22% -- Glutamina: 4g',  img: Pro},
-    {Nombre: 'Whey Isolate Gold', Precio: '$3690',descripcion: 'Medida: 30 g -- Proteina: 27g  -- BCAA: 6g  --  Grasas y Carbos: 0g   ',  img: Isolate},
-    {Nombre: 'Aminoácido Lean USN', Precio: '$2280',descripcion: ' Medida: 10,5 g -- SODIO: 65g--  POTASIO: 109mg -- VITAMINA B6: 2mg -- ACIDO FOLICO: 0.4mg-- LEUCINA: 2500mgISOLEUCINA: 1250mg-- VALINA: 1250mg-- GLUTAMINA: 2000m' , img: Lean},
-    {Nombre: 'Wp Cibeles® 4lb Whey Protein', Precio: '$3799', descripcion: 'Medida: 10 g -- PROTEINA: 28g- CARBOHIDRATOS 48%- GRASAS 0%-14 VITAMINAS y 14 MINERALES CON EL AGREGADO L-CARNITINA-- APORTA 4,5 g GLUTAMINA y 5,4 g de BCAAS-- SIN GLUTEN', img: Cibeles},
-    {Nombre: 'Barritas proteicas 12 unidades', Precio: '$699', descripcion: 'Medida basada en: 40 g / 1 Uniad --Proteina: 16g- - Carbohidratos: 15g--   Grasas saturadas: 2g--   Sodio: 62g-Kcal: 139Kcal', img: Barra},
+    {Nombre: 'Whey premium', Precio: '$7150',descripcion: '-MEDIDA: 30g  -PROTEINA: 23.5g  -BCAA: 5g', img: Premium},                          
+    {Nombre: 'whey-pro', Precio: '$2190' ,descripcion: 'MEDIDA: 30 g  -PROTEINA: 24g  -BCAA: 22%  -GLUTAMINA: 4g',  img: Pro},
+    {Nombre: 'Whey Isolate Gold', Precio: '$3690',descripcion: 'MEDIDA: 30 g  -PROTEINA: 27g  -BCAA: 6g  -GRASAS Y CARBOS: 0g   ',  img: Isolate},
+    {Nombre: 'Aminoácido Lean USN', Precio: '$2280',descripcion: ' MEDIDA: 10,5 g  -SODIO: 65g  -POTASIO: 109mg  -VITAMINA B6: 2mg  -ACIDO FOLICO: 0.4mg  -LEUCINA: 2500mg  -ISOLEUCINA: 1250mg  -VALINA: 1250mg  -GLUTAMINA: 2000m' , img: Lean},
+    {Nombre: 'Wp Cibeles® 4lb Whey Protein', Precio: '$3799', descripcion: 'MEDIDA: 10 g  -PROTEINA: 28g- CARBOHIDRATOS 48%  -GRASAS 0%  -14 VITAMINAS  -14 MINERALES CON EL AGREGADO L-CARNITINA  -GLUTAMINA: 4,5g  -BCAAS: 5,4 g -SIN GLUTEN', img: Cibeles},
+    {Nombre: 'Barritas proteicas 12 unidades', Precio: '$699', descripcion: 'MEDIDA: 40 g / 1 Uniad  -PROTEINA: 16g  -CARBOHIDRATOS: 15g  -GRASAS SATURADAS: 2g  -SODIO: 62g-Kcal: 139Kcal', img: Barra},
     {Nombre: 'Medias Largas Negras', Precio: '$1100',descripcion: 'Dalo todo en los entrenamientos con las medias Nike Everyday. Los hilos suaves con tecnología absorbente de transpiración ayudan a mantener los pies cómodos y secos.',  img: Medias},
     {Nombre: 'Remera Entrenamiento Hombre', Precio: '$1700',descripcion: 'Los guantes de entrenamiento Nike Gym proporcionan un gran agarre, protección y sujeción para el levantamiento de pesas, tanto para principiantes como para atletas de cross training con más experiencia.',  img: Guantes},
     {Nombre: 'Remera Entrenamiento Mujer', Precio: '$1700',descripcion: 'La colección Nike Pro te brinda la confianza que necesitás para superar tus metas personales. Esta remera de ajuste entallado ofrece una sensación suave y elástica que se adapta a tus deportes y ejercicios favoritos. Además, presenta un dobladillo redondeado que brinda cobertura adicional y una sensación de seguridad cuando lo llevas por dentro de una prenda para la parte inferior.',  img: RemeraH},
@@ -54,7 +54,7 @@ return(
     <section className="sectio">
         {Articulos.map((producto, index) => (
             <div key={index} className="card">
-                <img src={producto.img} alt={producto.Nombre} />
+                <img src={producto.img} alt={producto.Nombre}/>
                 <div className="cardContenido">
                     <h3 className="cardTitulo">{producto.Nombre}</h3>
                     <p className="cardDescripcion">{producto.descripcion}</p>

@@ -91,16 +91,14 @@ background-color: #000000;
 .patroN{
 text-align:left;
 color: rgb(0, 0, 0);
-font-weight: bold;  
 writing-mode: vertical-rl; 
 transform: rotate(-180deg);    
 flex-direction: column;
-font-size: 50px;
 background-color:  #eeeeee;
 border-radius: 10px;
 padding-top: 13rem;
 padding-bottom: 13rem;
-font-size:larger;
+font-size: larger;
 }
 p{
 font-size: 25px;
@@ -319,6 +317,9 @@ top:5px;
   border-radius: 10px;
 }
 
+.card-body {
+text-align: center;
+}
 
 .cardContenido {
   display: flex;

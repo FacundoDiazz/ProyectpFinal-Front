@@ -7,6 +7,7 @@ import axios from 'axios';
 function Login() {
 
     const [nombre, setNombre] = useState(''); 
+    const [edad, setEdad] = useState('');
     const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState(''); 
 
@@ -18,6 +19,7 @@ function Login() {
 
             await axios.post('http://localhost:9000/user/register', {
                 nombre,
+                edad,
                 email,
                 password
             });
@@ -40,6 +42,7 @@ function Login() {
 
     const handleReset = () => {
         setNombre('');
+        setEdad('');
         setEmail('');
         setPassword('');
     }
@@ -50,18 +53,31 @@ function Login() {
             <h1 className="text-center mt-5 mb-5" >
                 Registrate
             </h1>
-            <div className="Log " >
+            <div className="Log  " >
                 <form onSubmit={handleSubmit}>
                     <div className="form-group"  >
-                       
+                    
                         <label htmlFor="exampleInputNombre1">Nombre & Apellido</label>
-                         
+                        
                         <input type="text"
                             className="form-control"
                             onChange={(e) => setNombre(e.target.value)}
                             id="exampleInputNombre1"
                             value={nombre}
                             placeholder="Nombre & Apellido"
+                            required />
+
+                    </div>
+
+
+                    <div className="form-group mt-5 "  >
+                        <label htmlFor="exampleInputEmail1">Edad</label>
+                        <input type="number"
+                            className="form-control"
+                            id="exampleInputEdad1"
+                            value={edad}
+                            onChange={(e) => setEdad(e.target.value)}
+                            placeholder="De 8 a;os en adelante"
                             required />
 
                     </div>
@@ -90,8 +106,8 @@ function Login() {
                             required />
                     </div>
                     <div className="boo"> 
-                        <button type="submit"  className="btn btn-primary ">registrarse</button>
-                        <button onClick={handleReset} className="btn btn-danger">borrar</button>
+                        <button type="submit"  className="btn btn-primary ">Registrarse</button>
+                        <button onClick={handleReset} className="btn btn-danger">Borrar</button>
                     </div>
                 </form>
             </div>

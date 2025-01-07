@@ -9,7 +9,7 @@ const Nosotros = () => {
         Patrocinadores de primer nivel: 
         </h1> 
         <div className="patroN">
-        <p>Nike / Whey Protein</p>
+        <p>Nike / Whey Protein  /  Nike / Whey Protein   /  Nike / Whey Protein   /  Nike / Whey Protein   / Nike</p>
         
         </div>    
     <section className="section">

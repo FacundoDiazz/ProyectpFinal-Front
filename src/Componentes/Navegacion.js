@@ -17,9 +17,6 @@ const Navegacion = () => {
                     <Link to="/Contacto">Contacto</Link>
                 </li>
                 <li>
-                    <Link to="/Alta">Alta</Link>
-                </li>
-                <li>
                     <Link to="/Usuarios">Usuarios</Link>
                 </li>
                 <li>

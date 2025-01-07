@@ -37,15 +37,14 @@ const Carrito = () => {
     return (
         <>
         <h1 className="tCarrito">AQUI ESTAN TUS PRODUCTOS SELECIONADOS {user}</h1>
-    <div className="container text-center d-flex">
-    
+    <div className="sectio">
         {carrito.map((producto, index) => (
             <div key={index} className="card">
-                <img src={producto.img} className="card-img-top" alt={producto.nombre} />
+                <img src={producto.img}  alt={producto.nombre} />
                 <div className="card-body">
-                    <h5 className="card-title">{producto.nombre}</h5>
-                    <p className="card-text">Precio: ${producto.precio}</p>
-                    <button onClick={() => eliminarProducto(index)} className="btn btn-outline-secondary">
+                    <h5 className="card-title">{producto.Nombre}</h5>
+                    <p className="card-text">Precio:{producto.Precio}</p>
+                    <button onClick={() => eliminarProducto(index)} className="btn btn-outline-secondary text-center">
                         Eliminar
                     </button>
                 </div>
