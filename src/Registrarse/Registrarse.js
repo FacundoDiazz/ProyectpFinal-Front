@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function Registrarse({ setAuthenticated }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -16,7 +15,7 @@ function Registrarse({ setAuthenticated }) {
             if (response.data && response.data.token) {
                 setAuthenticated(true);
                 alert('Inicio de sesión exitoso');
-                navigate('/reservar-hora');
+                
             } else {
                 alert('Credenciales incorrectas');
             }

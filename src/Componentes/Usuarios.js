@@ -80,7 +80,7 @@ function Usuarios() {
                             <tr key={usuario._id}>
                                 <td>{usuario._id}</td>
                                 <td>{usuario.nombre}</td>
-                                <td>{usuario.Edad}</td>
+                                <td>{usuario.edad}</td>
                                 <td>{usuario.email}</td>
                                 <td>
                                     <button

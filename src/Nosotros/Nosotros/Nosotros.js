@@ -34,7 +34,7 @@ const Nosotros = () => {
 
     
             <div className="cajainfo2">
-        <h2 classname="titu">Tienda</h2>
+        <h2 className="titu">Tienda</h2>
         <h2>Whey Protein</h2>
         <p>
         Contamos con variedades de productos de esta marca <br />      
