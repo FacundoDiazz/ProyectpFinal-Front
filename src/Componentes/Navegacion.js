@@ -23,6 +23,9 @@ const Navegacion = () => {
                 <Link to="/Login">Registrarse</Link>
                 </li>
                 <li>
+                <Link to="/Registrarse">Login</Link>
+                </li>
+                <li>
                 <Link to="/Carrito"> 
                 <i className="bi bi-cart-check">
                 </i>

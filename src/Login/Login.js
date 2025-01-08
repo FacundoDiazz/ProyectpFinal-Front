@@ -17,7 +17,7 @@ function Login() {
         
         try {
 
-            await axios.post('http://localhost:9000/user/register', {
+            await axios.post(`${process.env.REACT_APP_API_URL_SERVER_POST}`, {
                 nombre,
                 edad,
                 email,
@@ -62,7 +62,7 @@ function Login() {
                         <input type="text"
                             className="form-control"
                             onChange={(e) => setNombre(e.target.value)}
-                            id="exampleInputNombre1"
+                            id="Nombre"
                             value={nombre}
                             placeholder="Nombre & Apellido"
                             required />
@@ -74,10 +74,10 @@ function Login() {
                         <label htmlFor="exampleInputEmail1">Edad</label>
                         <input type="number"
                             className="form-control"
-                            id="exampleInputEdad1"
+                            id="Edad"
                             value={edad}
                             onChange={(e) => setEdad(e.target.value)}
-                            placeholder="De 8 a;os en adelante"
+                            placeholder="Edad de 8 en adelante"
                             required />
 
                     </div>
@@ -86,7 +86,7 @@ function Login() {
                         <label htmlFor="exampleInputEmail1">Email</label>
                         <input type="email"
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             aria-describedby="emailHelp"
@@ -99,14 +99,14 @@ function Login() {
                         <label htmlFor="exampleInputPassword1">Password</label>
                         <input type="password"
                             className="form-control"
-                            id="exampleInputPassword1"
+                            id="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Minimo 8 caracteres"
                             required />
                     </div>
                     <div className="boo"> 
-                        <button type="submit"  className="btn btn-primary ">Registrarse</button>
+                        <button type="submit"  className="btn btn-primary ">Enviar Datos</button>
                         <button onClick={handleReset} className="btn btn-danger">Borrar</button>
                     </div>
                 </form>

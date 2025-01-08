@@ -2,10 +2,15 @@
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Usuarios() {
 
     const [usuarios, setUsuarios] = useState([]);
+    const navigate = useNavigate();
+    const EditarFormulario = (id) => {
+        navigate(`/editar/${id}`);
+    }
 
     
     //const URL = process.env.REACT_APP_API_URL_SERVER_GET;
@@ -34,7 +39,7 @@ function Usuarios() {
 
         console.log(id);
         try {
-            const respuesta = await axios.delete(`http://localhost:9000/user/${id}`);
+            const respuesta = await axios.delete(`${process.env.REACT_APP_API_URL_SERVER_DELETE}/${id}`);
             setUsuarios(usuarios.filter((usuario) => usuario._id !== id));
 
             console.log(respuesta);
@@ -85,6 +90,7 @@ function Usuarios() {
                                         Eliminar
                                     </button>
                                     <button className='btn btn-primary'
+                                     onClick={() => EditarFormulario(usuario._id)}
                                     >Editar</button>
                                 </td>
                             </tr>

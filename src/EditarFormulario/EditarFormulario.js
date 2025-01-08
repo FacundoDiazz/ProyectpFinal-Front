@@ -4,20 +4,21 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 function EditarFormulario() {
-    const { id } = useParams();
+    const { id } = useParams(); 
     const [nombre, setNombre] = useState('');
     const [edad, setEdad] = useState('');
     const [email, setEmail] = useState('');
     //const [password, setPassword] = useState('');
-    
+   
+
     useEffect(() => {
+
         axios.get(`${process.env.REACT_APP_API_URL_SERVER_GET}/${id}`)
             .then((response) => {
                 const usuario = response.data;
                 setNombre(usuario.nombre);
-                setEdad(usuario.plan);
+                setEdad(usuario.edad);
                 setEmail(usuario.email);
-                
             })
             .catch((error) => {
                 console.log('Error al cargar los datos del usuario:', error);
@@ -32,10 +33,10 @@ function EditarFormulario() {
             edad,
             email,
             //password,
-
         };
 
-        axios.put(`http://localhost:9000/user/register/${id}`, updatedUser)
+
+        axios.put(`${process.env.REACT_APP_API_URL_SERVER_PUT}/${id}`, updatedUser)
             .then((response) => {
                 console.log('Usuario actualizado correctamente');
 
@@ -43,6 +44,8 @@ function EditarFormulario() {
             setEdad('');
             setEmail('');
             //setPassword('');
+            
+            
             })
             .catch((error) => {
                 console.log('Error al actualizar el usuario:', error);
@@ -50,9 +53,9 @@ function EditarFormulario() {
     };
 
     return (
-        <div className="d-flex container mt-5">
+        <div className="d-flex justify-content-center container mt-5 mb-20">
             <Form className="w-75 shadow-lg p-4 rounded" onSubmit={handleSubmit}>
-                <Form.Group className="mb-4" htmlFor="nombre">
+                <Form.Group className="mb-10" htmlFor="nombre">
                     <Form.Label className="fw-bold">Nombre</Form.Label>
                     <Form.Control
                     id="nombre" 
@@ -70,10 +73,11 @@ function EditarFormulario() {
                         type="number" 
                         value={edad}
                         onChange={(e) => setEdad(e.target.value)}
-                        placeholder="name@example.com" 
+                        placeholder= "Edad desde los 8 en adelante" 
                         required
                     />
                 </Form.Group>
+
                 <Form.Group className="mb-4" htmlFor="email">
                     <Form.Label className="fw-bold">Email</Form.Label>
                     <Form.Control 
@@ -81,7 +85,7 @@ function EditarFormulario() {
                         type="email" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="De 8 a;os en adelante"
+                        placeholder="name@example.com" 
                         required
                     />
                 </Form.Group>
