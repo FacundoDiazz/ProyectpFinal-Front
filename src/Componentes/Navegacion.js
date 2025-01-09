@@ -14,9 +14,6 @@ const Navegacion = () => {
                     <Link to="/Ecomerce">Tienda</Link>
                 </li>               
                 <li>
-                    <Link to="/Contacto">Contacto</Link>
-                </li>
-                <li>
                     <Link to="/Usuarios">Usuarios</Link>
                 </li>
                 <li>
